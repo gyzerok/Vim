@@ -20,6 +20,7 @@ import { parseMarksCommandArgs } from './subparsers/marks';
 import { parseSmileCommandArgs } from './subparsers/smile';
 import { CommandBase } from './node';
 import { parseHistoryCommandArgs } from './subparsers/history';
+import { parseBDeleteCommandArgs } from './subparsers/buffer';
 
 // Associates a name and an abbreviation with a command parser
 export type CommandParserMapping = {
@@ -223,6 +224,11 @@ export const commandParsers = {
   history: {
     abbrev: 'his',
     parser: parseHistoryCommandArgs,
+  },
+
+  bd: {
+    abbrev: 'bd',
+    parser: parseBDeleteCommandArgs,
   },
 };
 
